@@ -1,29 +1,32 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class CyberArkPassword {
 
-    public static WebDriver driver;
+    private static WebDriver driver;
 
     public static void main(String[] args){
         Config conf = new Config();
         OTP otp = new OTP();
 
-        System.setProperty("webdriver.chrome.driver", conf.getProperty("chromeDriver"));
+        WebDriverManager.edgedriver().setup();
 
-        driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver,20);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver = new EdgeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.get(conf.getProperty("URL"));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("authItem")));
         List<WebElement> elements = driver.findElements(By.id("authItem"));
         elements.get(1).click();
 

@@ -15,24 +15,20 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.jboss.aerogear/aerogear-otp-java -->
-
         <dependency>
             <groupId>org.jboss.aerogear</groupId>
             <artifactId>aerogear-otp-java</artifactId>
             <version>1.0.0</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.1.2</version>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>3.141.59</version>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.1.0</version>
         </dependency>
     </dependencies>
 
@@ -60,7 +56,6 @@
                             <goal>single</goal>
                         </goals>
                     </execution>
-
                 </executions>
             </plugin>
         </plugins>

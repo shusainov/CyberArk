@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Config {
-    private final String configPath = "src/main/resources/config.properties";
+    private final String configPath = "config.properties";
     private FileInputStream propertyFile;
     private Properties PROPERTIES;
 
