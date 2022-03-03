@@ -47,6 +47,7 @@ public class CyberArkPassword {
         driver.switchTo().frame("frame-epv");
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(@class,'more-item')]"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='action-menu-item-1']"))).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='dialog']//input[contains(@formcontrolname,'secret')]")));
 
